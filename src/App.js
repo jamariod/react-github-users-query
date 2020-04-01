@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import ReactDOM from "react-dom";
+
 import axios from "axios";
 
 const Card = props => {
@@ -8,6 +8,7 @@ const Card = props => {
       <img alt="avatar" style={{ width: "70px" }} src={props.avatar_url} />
       <div>
         <div style={{ fontWeight: "bold" }}>{props.name}</div>
+
         <div>{props.blog}</div>
       </div>
     </div>
@@ -17,7 +18,7 @@ const Card = props => {
 const CardList = props => (
   <div>
     {props.cards.map(card => (
-      <Card {...card} />
+      <Card key={card.id} {...card} />
     ))}
   </div>
 );
